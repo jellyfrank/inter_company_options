@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+    <record id="inter_sale_purchase_res_config_settings" model="ir.ui.view">
+      <field name="name">zpw inter company settings</field>
+      <field name="model">res.config.settings</field>
+      <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//div[@id='inter_company']" position="after">
+          <div class="col-12 col-lg-6 o_setting_box" title="" attrs="{'invisible':[('rule_type','!=','so_and_po')]}">
+            <div class="o_setting_left_pane">
+              <field name="purchase_sale_line_uom"/>
+            </div>
+            <div class="o_setting_right_pane">
+              <b>采购生成销售时，使用采购明细单位</b>
+              <div class="text-muted">
+                  例如 A公司从B公司采购，B公司的销售订单同步使用A公司的采购单位
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 o_setting_box" title="" attrs="{'invisible':[('rule_type','!=','so_and_po')]}">
+            <div class="o_setting_left_pane">
+              <field name="sale_purchase_line_uom"/>
+            </div>
+            <div class="o_setting_right_pane">
+              <b>销售生成采购时，使用销售明细单位</b>
+              <div class="text-muted">
+                  例如 A公司销售给B公司，B公司的采购订单同步使用A公司的销售单位
+              </div>
+            </div>
+          </div>
+        </xpath>
+        <!-- <xpath expr="//div[@name='module_inter_company_rules_set_so_po']" position="after">
+          <h2>多公司业务</h2>
+          <div class="row mt16 o_settings_container">
+            <div class="col-12 col-lg-6 o_setting_box" title="">
+              <div class="o_setting_left_pane">
+                <field name="purchase_sale_line_uom"/>
+              </div>
+              <div class="o_setting_right_pane">
+                <b>采购生成销售时，使用采购明细单位</b>
+                <div class="text-muted">
+                  例如 A公司从B公司采购，B公司的销售订单同步使用A公司的采购单位
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 o_setting_box" title="">
+              <div class="o_setting_left_pane">
+                <field name="sale_purchase_line_uom"/>
+              </div>
+              <div class="o_setting_right_pane">
+                <b>销售生成采购时，使用销售明细单位</b>
+                <div class="text-muted">
+                  例如 A公司销售给B公司，B公司的采购订单同步使用A公司的销售单位
+                </div>
+              </div>
+            </div>
+          </div>
+        </xpath> -->
+      </field>
+    </record>
+  </data>
+</odoo>
